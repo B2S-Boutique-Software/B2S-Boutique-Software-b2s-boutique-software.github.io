@@ -1,47 +1,39 @@
-import Link from 'next/link';
+import * as React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+import Avatar from '@mui/material/Avatar';
 
-export default function Header() {
+export default function ButtonAppBar() {
   return (
-    <header style={headerStyle}>
-      <div style={logoStyle}>Minha Vitrine</div>
-      <nav>
-        <ul style={navListStyle}>
-          <li style={navItemStyle}>
-            <Link href="/">Produtos</Link>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static" sx={{ backgroundColor: 'black' }}>
+        <Toolbar>
+          
+          <Avatar
+            alt="Logo"
+            src="/favicon.ico"
+            sx={{
+              height: 40,
+              width: 40,
+              mr: 2, 
+            }}
+          />
+
+          {}
+          <IconButton
+            size="large"
+            edge="end"
+            color="inherit"
+            aria-label="menu"
+            sx={{ ml: 'auto' }} 
+          >
+            <MenuIcon />
+          </IconButton>
+        </Toolbar>
+      </AppBar>
+    </Box>
   );
 }
-
-const headerStyle = {
-  display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  padding: '1rem 2rem',
-  backgroundColor: '#333',
-  color: '#fff',
-};
-
-const logoStyle = {
-  fontSize: '1.5rem',
-  fontWeight: 'bold',
-};
-
-const navListStyle = {
-  listStyle: 'none',
-  display: 'flex',
-  gap: '1rem',
-};
-
-const navItemStyle = {
-  fontSize: '1rem',
-};
-
-const linkStyle = {
-  color: '#fff',
-  textDecoration: 'none',
-  transition: 'color 0.3s',
-};
-
