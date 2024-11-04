@@ -53,6 +53,7 @@ export default function InfoSection() {
 
   return (
     <Box
+      id="servicos"
       display="flex"
       flexDirection="column"
       alignItems="center"

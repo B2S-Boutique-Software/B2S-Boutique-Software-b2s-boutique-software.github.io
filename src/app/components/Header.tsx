@@ -17,7 +17,12 @@ import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { Typography } from "@mui/material";
 
-const menuItems = ["Serviços", "Tecnologias", "Clientes", "Contato"];
+const menuItems = [
+  { name: "Serviços", target: "servicos" },
+  { name: "Tecnologias", target: "tecnologias" },
+  { name: "Clientes", target: "clientes" },
+  { name: "Contato", target: "contato" },
+];
 
 export default function Header() {
   const theme = useTheme();
@@ -33,6 +38,10 @@ export default function Header() {
   };
 
   const handleScroll = (targetId: string) => {
+    if (targetId == "servicos") {
+      handleDrawerClose();
+      return;
+    }
     const targetElement = document.getElementById(targetId);
     if (targetElement) {
       targetElement.scrollIntoView({ behavior: "smooth" });
@@ -77,9 +86,10 @@ export default function Header() {
         }}
       >
         {menuItems.map((item) => (
-          <ListItem key={item} sx={{ my: 2 }}>
+          <ListItem key={item.name} sx={{ my: 2 }}>
             <ListItemText
-              primary={item}
+              primary={item.name}
+              onClick={() => handleScroll(item.target)}
               primaryTypographyProps={{
                 variant: "h5",
                 align: "center",
@@ -146,11 +156,12 @@ export default function Header() {
               >
                 {menuItems.map((item) => (
                   <Button
-                    key={item}
+                    onClick={() => handleScroll(item.target)}
+                    key={item.name}
                     color="inherit"
                     sx={{ mx: 1, fontSize: "1.1rem", textTransform: "none" }}
                   >
-                    {item}
+                    {item.name}
                   </Button>
                 ))}
               </Box>

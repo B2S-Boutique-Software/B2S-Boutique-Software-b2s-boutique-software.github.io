@@ -43,6 +43,7 @@ export default function Tech() {
 
   return (
     <Box
+      id="tecnologias"
       display="flex"
       flexDirection="column"
       alignItems="center"

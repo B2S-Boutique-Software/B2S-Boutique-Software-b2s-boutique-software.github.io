@@ -32,7 +32,7 @@ const clients = [
 
 export default function Clientes() {
   return (
-    <Box sx={{ backgroundColor: "#f9f5f2", py: 8 }}>
+    <Box id="clientes" sx={{ backgroundColor: "#f9f5f2", py: 8 }}>
       <Container>
         <Typography
           variant="h4"
