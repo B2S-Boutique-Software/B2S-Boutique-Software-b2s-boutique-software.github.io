@@ -58,10 +58,10 @@ export default function InfoSection() {
       flexDirection="column"
       alignItems="center"
       gap={3}
-      sx={{ padding: theme.spacing(2) }}
+      sx={{ padding: theme.spacing(2), backgroundColor: "black" }}
     >
       <Box sx={{ py: 8 }}>
-        <Container>
+        <Container >
           <Typography
             variant="h4"
             fontWeight="bold"
