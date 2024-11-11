@@ -62,11 +62,14 @@ export default function InfoSection() {
     >
       <Box sx={{ py: 8 }}>
         <Container>
-          <Grid2 container spacing={4} sx={{ color: "white" }}>
-            <Typography variant="h4" fontWeight="bold" gutterBottom>
-              Serviços
-            </Typography>
-          </Grid2>
+          <Typography
+            variant="h4"
+            fontWeight="bold"
+            gutterBottom
+            sx={{ mb: 4, textAlign: "center", color: "white" }}
+          >
+            Serviços
+          </Typography>
         </Container>
       </Box>
       {services.map((service, index) => (

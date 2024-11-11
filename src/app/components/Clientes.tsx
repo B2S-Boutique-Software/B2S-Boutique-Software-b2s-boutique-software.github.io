@@ -1,33 +1,29 @@
 "use client";
 
 import React from "react";
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, Typography, Tooltip } from "@mui/material";
 
 const clients = [
   {
-    name: "Sistema Info",
-    logo: "sistema-info.png",
+    name: "Catarina Transportes",
+    logo: "catarina.png",
   },
   {
-    name: "Betha",
-    logo: "betha.png",
+    name: "Transportes Nova Vida",
+    logo: "novavida.png",
   },
   {
-    name: "NTT DATA",
-    logo: "ntt.png",
+    name: "Espaço Terapêutico Ressignificar",
+    logo: "ressignificar.png",
   },
   {
-    name: "Itaú",
-    logo: "itau.png",
-  },
-  {
-    name: "Orbe",
+    name: "Orbe Sistemas",
     logo: "orbe.png",
   },
   {
-    name: "Celk",
+    name: "Celk Sistemas",
     logo: "celk.png",
-  }
+  },
 ];
 
 export default function Clientes() {
@@ -43,20 +39,22 @@ export default function Clientes() {
           Clientes que já acreditaram no nosso trabalho
         </Typography>
         {clients.map((client, index) => (
-          <Box key={index} sx={{ textAlign: "center", px: 2 }}>
-            <Box
-              component="img"
-              src={client.logo}
-              alt={client.name}
-              sx={{
-                maxWidth: "150px",
-                height: "auto",
-                mx: "auto",
-                paddingTop: "50px",
-                filter: "grayscale(100%)",
-              }}
-            />
-          </Box>
+          <Tooltip title={client.name}>
+            <Box key={index} sx={{ textAlign: "center", px: 2 }}>
+              <Box
+                component="img"
+                src={client.logo}
+                alt={client.name}
+                sx={{
+                  maxWidth: "150px",
+                  height: "auto",
+                  mx: "auto",
+                  paddingTop: "50px",
+                  filter: "grayscale(100%)",
+                }}
+              />
+            </Box>
+          </Tooltip>
         ))}
       </Container>
     </Box>

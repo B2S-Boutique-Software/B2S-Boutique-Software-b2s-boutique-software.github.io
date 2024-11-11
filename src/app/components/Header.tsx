@@ -21,7 +21,6 @@ const menuItems = [
   { name: "Serviços", target: "servicos" },
   { name: "Tecnologias", target: "tecnologias" },
   { name: "Clientes", target: "clientes" },
-  { name: "Contato", target: "contato" },
 ];
 
 export default function Header() {
