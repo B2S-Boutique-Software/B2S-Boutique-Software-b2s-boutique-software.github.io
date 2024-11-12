@@ -6,8 +6,6 @@ import InfoSection from "./components/InfoSection";
 import Tech from "./components/Tech";
 import WhatsApp from "./components/WhatsApp";
 import { Metadata } from "next";
-import Script from "next/script";
-
 
 export const metadata: Metadata = {
   title: 'B2S',
@@ -28,25 +26,6 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-    <Script
-        strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=G-484BLCDERH`}
-      />
-      <Script
-        id="gtag-init"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-484BLCDERH', {
-              page_path: window.location.pathname,
-            });
-          `,
-        }}
-      />
       <Header />
       <InfoSection />
       <Tech />

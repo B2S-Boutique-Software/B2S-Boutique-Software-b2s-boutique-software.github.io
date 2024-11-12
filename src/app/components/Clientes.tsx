@@ -1,26 +1,32 @@
 "use client";
 
 import React from "react";
+import { v4 as uuidv4 } from 'uuid';
 import { Box, Typography, Tooltip } from "@mui/material";
 
 const clients = [
   {
+    id: 1,
     name: "Catarina Transportes",
     logo: "catarina.png",
   },
   {
+    id: 2,
     name: "Transportes Nova Vida",
     logo: "novavida.png",
   },
   {
+    id: 3,
     name: "Espaço Terapêutico Ressignificar",
     logo: "ressignificar.png",
   },
   {
+    id: 4,
     name: "Orbe Sistemas",
     logo: "orbe.png",
   },
   {
+    id: 6,
     name: "Celk Sistemas",
     logo: "celk.png",
   },
@@ -38,8 +44,8 @@ export default function Clientes() {
         Clientes que já acreditaram no nosso trabalho
       </Typography>
       {clients.map((client, index) => (
-        <Tooltip title={client.name}>
-          <Box key={index} sx={{ textAlign: "center", px: 2 }}>
+        <Tooltip key={uuidv4()} title={client.name}>
+          <Box sx={{ textAlign: "center", px: 2 }}>
             <Box
               component="img"
               src={client.logo}

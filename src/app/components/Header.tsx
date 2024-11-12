@@ -25,7 +25,6 @@ const menuItems = [
 
 export default function Header() {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
 
   const handleDrawerOpen = () => {
@@ -125,48 +124,28 @@ export default function Header() {
           >
             B2S
           </Typography>
-          {isMobile ? (
-            <>
-              <Box sx={{ flexGrow: 1 }} />
-              <IconButton
-                size="large"
-                edge="end"
-                color="inherit"
-                aria-label="Abrir menu"
-                onClick={handleDrawerOpen}
-              >
-                <MenuIcon />
-              </IconButton>
-              <Drawer
-                anchor="right"
-                open={isDrawerOpen}
-                onClose={handleDrawerClose}
-                ModalProps={{
-                  keepMounted: true,
-                }}
-              >
-                {drawerContent}
-              </Drawer>
-            </>
-          ) : (
-            <>
-              <Box
-                sx={{ display: "flex", flexGrow: 1, justifyContent: "center" }}
-              >
-                {menuItems.map((item) => (
-                  <Button
-                    onClick={() => handleScroll(item.target)}
-                    key={item.name}
-                    color="inherit"
-                    sx={{ mx: 1, fontSize: "1.1rem", textTransform: "none" }}
-                  >
-                    {item.name}
-                  </Button>
-                ))}
-              </Box>
-              <Box sx={{ flexGrow: 0 }} />
-            </>
-          )}
+          <>
+            <Box sx={{ flexGrow: 1 }} />
+            <IconButton
+              size="large"
+              edge="end"
+              color="inherit"
+              aria-label="Abrir menu"
+              onClick={handleDrawerOpen}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Drawer
+              anchor="right"
+              open={isDrawerOpen}
+              onClose={handleDrawerClose}
+              ModalProps={{
+                keepMounted: true,
+              }}
+            >
+              {drawerContent}
+            </Drawer>
+          </>
         </Toolbar>
       </AppBar>
     </Box>
